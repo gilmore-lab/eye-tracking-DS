@@ -4,7 +4,6 @@
 - *Column D*, "StudioTestName", {WO1, CRO1}, white/color background?
 - *Column E*, "ParticipantName"
 - *Column F*, "ParticipantType", {1,2}
-- *
 - *Column Z*, "RecordingTimestamp", contains an integer with the time in milliseconds from the start of the recording.
 - *Column AC:AH*, "MouseEventIndex", "MouseEvent", four columns with mouse X, Y coordinates.
 - *Column AR*, "FixationIndex"
