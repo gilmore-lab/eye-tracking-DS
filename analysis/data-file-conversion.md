@@ -1,0 +1,24 @@
+# From Tobii Raw to "Long" file format
+
+- *Column C*, "StudioProjectName", {RO1_A}
+- *Column D*, "StudioTestName", {WO1, CRO1}, white/color background?
+- *Column E*, "ParticipantName"
+- *Column F*, "ParticipantType", {1,2}
+- *
+- *Column Z*, "RecordingTimestamp", contains an integer with the time in milliseconds from the start of the recording.
+- *Column AC:AH*, "MouseEventIndex", "MouseEvent", four columns with mouse X, Y coordinates.
+- *Column AR*, "FixationIndex"
+- *Column AT*, "GazeEvent", {Fixation, Unclassified, Saccade}
+- *Column AU*, "GazeEventDuration".
+- *Column AV:AW*, "FixationPointX", "FixationPointY"
+- *Column AX*, "SaccadicAmplitude"
+- *Column AY*, "AbsoluteSaccadicDirection"
+- *Column AZ*, "RelativeSaccadicDirection"
+- *Column BA:*, AOI Hit indices.
+- *Column M*, "MediaName", contains the name of the image file for each measurement with {.png, .jpg, .wmv} extensions.
+- There are many columns, we think ordered by photograph name somehow, with labels AOI[<AOILBL>]Hit, where <AOILBL> is the label applied to the AOI.
+    - There should be 16 AOIs, one for each picture.
+    - The picture AOIs have labels {TargetGroup, TargetGrouP 2, Target_final, Target GrouP 3, Target_pair 2, }
+    - One should be for the whole screen, labeled "all"
+    - If "all" and not(sum(picture AOI hits)), then position is in extra "white" space.
+    - Consider renaming AOIs, since we don't know what order Tobii exports the AOIs, and the names aren't helpful. Consider "Ball-TargetGroup", or prepending the image name to the AOI name.
